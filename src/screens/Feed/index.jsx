@@ -12,6 +12,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import reels from '../../../assets/reels.png';
 
+
+
 function Feed() {
 
   const posts = [
@@ -25,6 +27,7 @@ function Feed() {
       hashtags: '#leagueoflegends #Shaco #Skins #lol',
       place: 'Jogos',
       commentF: '8.546 comentarios feitos',
+      img_perfil: 'https://pbs.twimg.com/profile_images/1459900912730734598/fzHxrT5r_400x400.jpg',
       
     },
 
@@ -37,7 +40,8 @@ function Feed() {
       description: 'Elden Ring is coming 21st January, 2022. Check out the new gameplay trailer(link in bio)',
       hashtags: '#elderring #Darksouls',
       place: 'Jogos',
-      commentF: '10.784 comentarios feitos'
+      commentF: '10.784 comentarios feitos',
+      img_perfil: 'https://pbs.twimg.com/profile_images/875586745479249922/GYekVrNZ_400x400.jpg'
     },
 
     {
@@ -49,7 +53,8 @@ function Feed() {
       description: 'saiu um novo episodi! Caso bizarro #16 - Homem do saco, bode atirador de pedras e API ( a pior delas)',
       hashtags: '#Truecrime #podcast #modusoperandi',
       place: 'Podcast',
-      commentF: '5.456 comentarios feitos'
+      commentF: '5.456 comentarios feitos',
+      img_perfil: 'https://pbs.twimg.com/profile_images/1208924672303063041/QvKLv09G_400x400.jpg',
     },
 
     
@@ -62,7 +67,8 @@ function Feed() {
       description: 'O pai é brabo',
       hashtags: '#eu #eumesmo #o mais brabo',
       place: 'euzinho',
-      commentF: '10.456.400 comentarios feitos'
+      commentF: '10.456.400 comentarios feitos',
+      img_perfil:'https://scontent.fgig14-1.fna.fbcdn.net/v/t39.30808-6/243275367_384372736738264_738456183410629914_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=8tLSVfr4dJUAX8r2OE7&_nc_ht=scontent.fgig14-1.fna&oh=c7cf0af382efb446390042858d18ac27&oe=61B79153'
     },
     {
       id: '5',
@@ -73,9 +79,11 @@ function Feed() {
       description: 'Neeko nao é tomatinho triste, ela é tomatinho fortona',
       hashtags: '#neeko #lol #tomate',
       place: 'lolzinho',
-      commentF: '456.400 comentarios feitos'
+      commentF: '456.400 comentarios feitos',
+      img_perfil: 'https://uailistar.com/wp-content/uploads/2020/04/League-of-Legends-Lux-League-of-Legends-1755419.jpg'
+      
     }
-
+        //ultimo problema resolvido(icon)
   ];
 
 function renderItem({ item: post }) {     //Feed
@@ -87,10 +95,11 @@ function renderItem({ item: post }) {     //Feed
 
           <View style={styles.userInfo}>
 
-           
-            <Text style={styles.author}>{post.author}</Text>
-            <Text style={styles.place}>{post.place}</Text>
-
+            <View>
+              <Image source={{uri: post.img_perfil}} style={{width:40, height:40, borderRadius: '100/2', marginBottom:-35}}/>
+              <Text style={styles.author}>{post.author}</Text>
+              <Text style={styles.place}>{post.place}</Text>
+            </View>
           </View>
 
           <View style={styles.postOptions}>
@@ -184,11 +193,14 @@ const styles = StyleSheet.create({
   author: {
     fontSize: 14,
     color: '#000',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginLeft:60,
   },
   place: {
     fontSize: 12,
-    color: '#666'
+    color: '#666',
+    marginLeft:60
+
   },
   picture_url: {
     width: '100%',
