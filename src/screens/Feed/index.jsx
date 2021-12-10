@@ -7,6 +7,11 @@ import send from '../../../assets/send.png';
 import save from '../../../assets/save.png';
 import { Assets } from 'react-navigation-stack';
 import { Foundation } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import reels from '../../../assets/reels.png';
+
 function Feed() {
 
   const posts = [
@@ -73,7 +78,7 @@ function Feed() {
 
   ];
 
-function renderItem({ item: post }) {
+function renderItem({ item: post }) {     //Feed
   return (
 
     <View style={styles.post}>
@@ -152,7 +157,12 @@ function renderItem({ item: post }) {
         renderItem={renderItem}
       />
       <View style={{backgroundColor: "white", width:'100%', height: '30%'}}>
-        <Foundation name="home" size={35} color="black" style={{marginLeft: 40, marginTop: 10}} />
+        
+      <TouchableOpacity><Foundation name="home" size={35} color="black" style={{marginLeft: 40, marginTop: 10}} /></TouchableOpacity>
+      <TouchableOpacity><AntDesign name="search1" size={30} color="black" style={{marginLeft: 115, marginTop: -30}}/></TouchableOpacity>
+      <TouchableOpacity><FontAwesome name="user-circle" size={30} color="black" style={{marginLeft:320, marginTop:-30}}/></TouchableOpacity>
+      <TouchableOpacity><Feather name="shopping-bag" size={30} color="black" style={{marginLeft:250, marginTop:-30}} /></TouchableOpacity>
+      <TouchableOpacity><Image source={reels} style={{marginLeft:180, marginTop:-30, width:30, height:30}}/></TouchableOpacity>
       </View>
     </SafeAreaView>
   );
